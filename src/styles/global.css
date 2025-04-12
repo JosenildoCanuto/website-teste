@@ -1,0 +1,12 @@
+/* Reset básico pra tirar margens indesejadas */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* (Opcional) Deixa as fontes e layout mais estáveis */
+  * {
+    box-sizing: inherit;
+  }
+  
