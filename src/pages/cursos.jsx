@@ -74,7 +74,6 @@ export default function Cursos() {
           mt: 2,
           position: "relative",
           overflow: "hidden",
-          minHeight: "100vh",
           "&>*": {
             position: "relative",
             zIndex: 5,
@@ -83,7 +82,6 @@ export default function Cursos() {
             content: '""',
             position: "absolute",
             width: "100%",
-            height: "100%",
             top: 0,
             left: 0,
             zIndex: 2,
@@ -96,9 +94,9 @@ export default function Cursos() {
           image={headerCursos}
           sx={{
             position: "absolute",
-            width: { md: "50%", lg: "50%", xl: "50%" },
-            right: { md: "8%", lg: "6%", xl: "5%" },
-            top: { md: "20%", lg: "16%", xl: "12%" },
+            width: { md: "30%", lg: "30%", xl: "30%" },
+            right: { md: "18%", lg: "16%", xl: "20%" },
+            top: { md: "26%", lg: "16%", xl: "12%" },
             display: { xs: "none", md: "block" },
           }}
         />
@@ -111,7 +109,7 @@ export default function Cursos() {
         spacing={2}
         xs={12}
         sm={10}
-        sx={{ mt: 0, mb: { md: 25, xs: 15 }, mx: "auto" }}
+        sx={{ mx: "auto" }}
       >
         {list.map((list, index) => (
           <Grid
@@ -131,6 +129,7 @@ export default function Cursos() {
               <MainCard
                 contentSX={{ p: 3 }}
                 sx={{
+                  border: "1px solid", borderColor: "#e6ebf1",
                   bgcolor: list.active ? "primary.lighter" : "transparent",
                 }}
               >

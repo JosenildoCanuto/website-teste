@@ -26,7 +26,6 @@ export default function Services() {
         sx={{
           position: "relative",
           overflow: "hidden",
-          minHeight: "100vh",
           "&>*": {
             position: "relative",
             zIndex: 5,
@@ -35,7 +34,6 @@ export default function Services() {
             content: '""',
             position: "absolute",
             width: "100%",
-            height: "100%",
             top: 0,
             left: 0,
             zIndex: 2,
@@ -48,9 +46,9 @@ export default function Services() {
           image={headerProducts}
           sx={{
             position: "absolute",
-            width: { md: "60%", lg: "50%", xl: "50%" },
-            right: { md: "8%", lg: "6%", xl: "5%" },
-            top: { md: "16%", lg: "12%", xl: "8%" },
+            width: { md: "30%", lg: "30%", xl: "30%" },
+            right: { md: "18%", lg: "16%", xl: "20%" },
+            top: { md: "26%", lg: "16%", xl: "12%" },
             display: { xs: "none", md: "block" },
           }}
         />
@@ -60,14 +58,13 @@ export default function Services() {
         container
         sx={{
           position: "relative",
-          minHeight: "100vh",
           "&:before": {
             content: '""',
             position: "absolute",
-            bottom: { xs: 70, md: -100 },
+            bottom: { xs: 70, md: -100, xl: -250 },
             left: 0,
             width: "100%",
-            height: { xs: "60%", md: "58%" },
+            height: { xs: "60%", md: "58%", xl: "80%" },
             backgroundImage: `url(${bgServices})`,
             backgroundSize: "cover",
             backgroundPosition: "center bottom",
@@ -80,7 +77,6 @@ export default function Services() {
           item
           xs={12}
           sx={{
-            mt: { xs: "8rem", md: "5rem" },
             position: "relative",
             zIndex: 2,
           }}
@@ -89,7 +85,7 @@ export default function Services() {
             container
             spacing={1}
             justifyContent="center"
-            sx={{ mb: 4, textAlign: "center" }}
+            sx={{ pb: 4, textAlign: "center" }}
           >
             <Grid item sm={10} md={6}>
               <Grid container spacing={1} justifyContent="center">

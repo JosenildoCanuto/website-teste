@@ -84,9 +84,9 @@ export default function ListProducts() {
     <>
       <Box
         sx={{
-          marginLeft: { md: "9rem", xs: "1rem" },
-          marginRight: { md: "9rem", xs: "1rem" },
-          mb: "6rem",
+          pl: { md: "9rem", xs: "1rem" },
+          pr: { md: "9rem", xs: "1rem" },
+          pb: "6rem",
         }}
       >
         <Grid
