@@ -46,9 +46,9 @@ export default function Services() {
           image={headerProducts}
           sx={{
             position: "absolute",
-            width: { md: "30%", lg: "30%", xl: "30%" },
-            right: { md: "18%", lg: "16%", xl: "20%" },
-            top: { md: "26%", lg: "16%", xl: "12%" },
+            width: { sm: "56%", md: "30%", lg: "30%", xl: "30%" },
+            right: { sm: "50%" , md: "18%", lg: "16%", xl: "20%" },
+            top: { sm: "56%", md: "26%", lg: "16%", xl: "12%" },
             display: { xs: "none", md: "block" },
           }}
         />
@@ -61,10 +61,10 @@ export default function Services() {
           "&:before": {
             content: '""',
             position: "absolute",
-            bottom: { xs: 70, md: -100, xl: -250 },
+            bottom: { xs: 70, sm: 10, md: -100, xl: -250 },
             left: 0,
             width: "100%",
-            height: { xs: "60%", md: "58%", xl: "80%" },
+            height: { xs: "65%", md: "58%", xl: "80%" },
             backgroundImage: `url(${bgServices})`,
             backgroundSize: "cover",
             backgroundPosition: "center bottom",
@@ -90,7 +90,7 @@ export default function Services() {
             <Grid item sm={10} md={6}>
               <Grid container spacing={1} justifyContent="center">
                 <Grid item xs={10}>
-                  <Typography variant="h4" sx={{ mb: 2, fontWeight: "bold" }}>
+                  <Typography variant="h4" sx={{ pb: 2, fontWeight: "bold" }}>
                     Get the power to create beautiful
                     <Box component="span" sx={{ color: "primary.main" }}>
                       <span> web apps </span>
@@ -150,3 +150,5 @@ export default function Services() {
     </Layout>
   );
 }
+
+export const Head = () => <title>Sevicios</title>

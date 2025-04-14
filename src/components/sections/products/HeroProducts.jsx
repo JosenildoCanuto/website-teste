@@ -21,7 +21,7 @@ export default function HeroProducts() {
         alignItems: "center",
         justifyContent: "center",
         pt: "15rem",
-        pb: { xs: "2rem", md: "6rem", lg:"12rem" , xl: "24rem" },
+        pb: { xs: "12rem", xl: "24rem" },
       }}
     >
       <Grid
@@ -47,11 +47,10 @@ export default function HeroProducts() {
                 transition={{ type: "spring", stiffness: 150, damping: 30 }}
               >
                 <Typography
-                  variant="h1"
+                  variant="h4"
                   color="success"
                   sx={{
-                    fontSize: { xs: "1.825rem", sm: "2rem", md: "2.5rem" },
-                    fontWeight: 700,
+                    fontWeight: "bold",
                     lineHeight: { xs: 1.3, sm: 1.3, md: 1.3 },
                   }}
                 >

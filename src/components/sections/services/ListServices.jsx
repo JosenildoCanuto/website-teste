@@ -44,9 +44,9 @@ export default function ListServices() {
   return (
     <Box
       sx={{
-        marginLeft: { md: '9rem', xs: '1rem' },
-        marginRight: { md: '9rem', xs: '1rem' },
-        mb: '6rem',
+        pl: { md: '9rem', xs: '1rem' },
+        pr: { md: '9rem', xs: '1rem' },
+        pb: '6rem',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -54,10 +54,9 @@ export default function ListServices() {
     >
       <Grid
         container
-        spacing={3}
         sx={{
           display: 'flex',
-          gap: 2,
+          gap: 3,
           justifyContent: 'center',
           alignItems: 'center'
         }}

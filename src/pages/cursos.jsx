@@ -175,3 +175,5 @@ export default function Cursos() {
     </Layout>
   );
 }
+
+export const Head = () => <title>Cursos</title>

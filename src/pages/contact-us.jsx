@@ -33,3 +33,5 @@ export default function contactUS() {
     </Layout>
   );
 }
+
+export const Head = () => <title>Contact-us</title>

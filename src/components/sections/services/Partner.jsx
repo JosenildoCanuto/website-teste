@@ -41,11 +41,11 @@ export default function Partner() {
   ];
 
   return (
-    <Box sx={{ overflowX: 'hidden', pt: '12rem' }}>
+    <Box sx={{ overflowX: 'hidden', pt: {xl:'12rem'} }}>
       <Container>
         <Grid container alignItems="center" justifyContent="center" spacing={2} sx={{ pt: { md: 20, xs: 2.5 }, pb: { md: 2.5, xs: 2.5 } }}>
           <Grid item xs={12}>
-            <Grid container spacing={5} justifyContent="center" sx={{ mb: 4, textAlign: 'center' }}>
+            <Grid container spacing={5} justifyContent="center" sx={{ pb: 4, textAlign: 'center' }}>
               {partnerimage.map((item, index) => (
                 <Grid item key={index}>
                   <Animation

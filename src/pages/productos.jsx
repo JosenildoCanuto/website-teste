@@ -63,7 +63,7 @@ export default function Products() {
           <Grid item sm={10} md={6}>
             <Grid container spacing={1} justifyContent="center">
               <Grid item xs={10}>
-                <Typography variant="h4" sx={{ mb: 2, fontWeight: "bold" }}>
+                <Typography variant="h4" sx={{ pb: 2, fontWeight: "bold" }}>
                   Módulos flexibles para hoy, escalables para el futuro.
                 </Typography>
               </Grid>
@@ -85,3 +85,5 @@ export default function Products() {
     </Layout>
   );
 }
+
+export const Head = () => <title>Products</title>

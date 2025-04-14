@@ -26,12 +26,11 @@ import Typography from "@mui/material/Typography";
 import Logo from "../logo";
 import IconButton from "../@extended/IconButton";
 
-import { APP_DEFAULT_PATH, ThemeMode } from "../../config";
+import { ThemeMode } from "../../config";
 
 // assets
 import MenuOutlined from "@ant-design/icons/MenuOutlined";
 import User from "../../images/drawers/user.svg";
-import Dashboard from "../../images/drawers/dashboard.svg";
 import Shopping from "../../images/drawers/shopping.svg";
 import Folder from "../../images/drawers/folder.svg";
 import Phone from "../../images/drawers/phone.svg";
@@ -41,15 +40,11 @@ import Book from "../../images/drawers/book.svg";
 
 // elevation scroll
 function ElevationScroll({ children, window }) {
-  // const theme = useTheme();
-
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 10,
     target: window ? window() : undefined,
   });
-
-  // const backColorScroll = theme.palette.mode === ThemeMode.DARK ? theme.palette.grey[50] : theme.palette.grey[800];
 
   return React.cloneElement(children, {
     style: {
@@ -63,13 +58,21 @@ export default function Header() {
   const location = useLocation();
   const currentPath = location.pathname;
 
-  const isActive = (path) => currentPath === path;
+  const items = [
+    { to: "/login", label: "Login", icon: User },
+    { to: "/productos", label: "Productos", icon: Shopping },
+    { to: "/servicios", label: "Servicios", icon: Folder },
+    { to: "/cursos", label: "Cursos", icon: Phone },
+    { to: "/contact-us", label: "Contacto", icon: Book },
+  ];
+
+  const isActive = (to) => {
+    return currentPath === to || currentPath.startsWith(to + "/");
+  };
 
   const downMD = useMediaQuery(theme.breakpoints.down("md"));
-
   const [drawerToggle, setDrawerToggle] = useState(false);
 
-  /** Method called on multiple components with different event types */
   const drawerToggler = (open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -119,52 +122,21 @@ export default function Header() {
               }}
               spacing={4}
             >
-              <Link
-                className="header-link"
-                color="primary"
-                component={GatsbyLink}
-                to={"/login"}
-                underline="none"
-              >
-                <Typography>Login</Typography>
-              </Link>
-              <Link
-                className="header-link"
-                color={isActive("/productos") ? "primary" : "text.primary"}
-                component={GatsbyLink}
-                to="/productos"
-                underline="none"
-              >
-                <Typography>Productos</Typography>
-              </Link>
-              <Link
-                className="header-link"
-                color={isActive("/servicios") ? "primary" : "text.primary"}
-                component={GatsbyLink}
-                to="/servicios"
-                underline="none"
-              >
-                <Typography>Servicios</Typography>
-              </Link>
-              <Link
-                className="header-link"
-                color={isActive("/cursos") ? "primary" : "text.primary"}
-                component={GatsbyLink}
-                to="/cursos"
-                underline="none"
-              >
-                <Typography>Cursos</Typography>
-              </Link>
-              <Link
-                className="header-link"
-                color={isActive("/contacto") ? "primary" : "text.primary"}
-                component={GatsbyLink}
-                to="/contact-us"
-                underline="none"
-              >
-                <Typography>Contacto</Typography>
-              </Link>
+              {items.map(({ to, label }, index) => (
+                <Link
+                  className="header-link"
+                  color={isActive(to) ? "primary" : "text.secondary"}
+                  component={GatsbyLink}
+                  to={to}
+                  underline="none"
+                  key={index}
+                >
+                  <Typography>{label}</Typography>
+                </Link>
+              ))}
             </Stack>
+
+            {/* Menu mobile + botão login */}
             <Box
               sx={{
                 width: "100vw",
@@ -173,7 +145,7 @@ export default function Header() {
                 display: { xs: "flex", md: "none" },
                 alignItems: "center",
                 justifyContent: "space-between",
-                px: 2, // padding lateral pro mobile
+                px: 2,
                 boxSizing: "border-box",
               }}
             >
@@ -187,11 +159,9 @@ export default function Header() {
                   size="small"
                   color="primary"
                   to="/login"
-                  sx={{ mt: 0.5, height: 28 }}
                 >
                   <Typography>Login</Typography>
                 </Button>
-
                 <IconButton
                   color="secondary"
                   onClick={drawerToggler(true)}
@@ -219,7 +189,7 @@ export default function Header() {
                   "& .MuiListItemIcon-root": { color: "black" },
                 }}
               >
-                <Box sx={{ mt: 3, pl: 1 }}>
+                <Box sx={{ pt: 3, pl: 1 }}>
                   <Link component={GatsbyLink} to="/" underline="none">
                     <Logo />
                   </Link>
@@ -237,86 +207,61 @@ export default function Header() {
                   onKeyDown={drawerToggler(false)}
                 >
                   <List>
-                    <Link component={GatsbyLink} underline="none" to="/login">
-                      <ListItemButton sx={{ gap: 0.75 }}>
-                        <ListItemIcon>
-                          <img src={User} alt="Ícone" width={24} height={24} />
-                        </ListItemIcon>
-                        <ListItemText
-                          primary="Login"
-                          primaryTypographyProps={{
-                            variant: "h6",
-                            color: "text.primary",
-                          }}
-                        />
-                      </ListItemButton>
-                    </Link>
-                    <Link component={GatsbyLink} underline="none" to="/productos">
-                      <ListItemButton sx={{ gap: 0.75 }}>
-                        <ListItemIcon>
-                          <img
-                            src={Shopping}
-                            alt="Ícone"
-                            width={20}
-                            height={20}
-                          />
-                        </ListItemIcon>
-                        <ListItemText
-                          primary="Productos"
-                          primaryTypographyProps={{
-                            variant: "h6",
-                            color: "text.primary",
-                          }}
-                        />
-                      </ListItemButton>
-                    </Link>
-                    <Link component={GatsbyLink} underline="none" to="/servicios">
-                      <ListItemButton sx={{ gap: 0.75 }}>
-                        <ListItemIcon>
-                          <img
-                            src={Folder}
-                            alt="Ícone"
-                            width={20}
-                            height={20}
-                          />
-                        </ListItemIcon>
-                        <ListItemText
-                          primary="Servicios"
-                          primaryTypographyProps={{
-                            variant: "h6",
-                            color: "text.primary",
-                          }}
-                        />
-                      </ListItemButton>
-                    </Link>
-                    <Link component={GatsbyLink} underline="none" to="/cursos">
-                      <ListItemButton sx={{ gap: 0.75 }}>
-                        <ListItemIcon>
-                          <img src={Phone} alt="Ícone" width={20} height={20} />
-                        </ListItemIcon>
-                        <ListItemText
-                          primary="Cursos"
-                          primaryTypographyProps={{
-                            variant: "h6",
-                            color: "text.primary",
-                          }}
-                        />
-                      </ListItemButton>
-                    </Link>
-                    <Link component={GatsbyLink} underline="none" to="/contact-us">
-                      <ListItemButton sx={{ gap: 0.75 }}>
-                        <ListItemIcon>
-                          <img src={Book} alt="Ícone" width={20} height={20} />
-                        </ListItemIcon>
-                        <ListItemText
-                          primary="Contacto"
-                          primaryTypographyProps={{
-                            variant: "h6",
-                            color: "text.primary",
-                          }}
-                        />
-                      </ListItemButton>
-                    </Link>
+                    {items.map(({ to, label, icon }, index) => {
+                      return (
+                        <Link
+                          key={index}
+                          component={GatsbyLink}
+                          underline="none"
+                          to={to}
+                        >
+                          <Stack
+                            direction="row"
+                            alignItems="center"
+                            paddingLeft={1}
+                            paddingRight={1}
+                            spacing={1}
+                          >
+                            <Box
+                              sx={{
+                                width: 6,
+                                height: 40,
+                                borderRadius: "999px",
+                                bgcolor: isActive(to)
+                                  ? "#1976d2"
+                                  : "transparent",
+                                transition: "all 0.3s ease",
+                              }}
+                            />
+                            <ListItemButton
+                              sx={{
+                                gap: 0.5,
+                                borderRadius: 2,
+                                bgcolor: isActive(to)
+                                  ? "rgba(169, 169, 169, 0.2)"
+                                  : "transparent"
+                              }}
+                            >
+                              <ListItemIcon>
+                                <img
+                                  src={icon}
+                                  alt="Ícone"
+                                  width={20}
+                                  height={20}
+                                />
+                              </ListItemIcon>
+                              <ListItemText
+                                primary={label}
+                                primaryTypographyProps={{
+                                  variant: "h6",
+                                  color: "text.primary",
+                                }}
+                              />
+                            </ListItemButton>
+                          </Stack>
+                        </Link>
+                      );
+                    })}
                   </List>
                 </Box>
               </Drawer>
@@ -328,4 +273,7 @@ export default function Header() {
   );
 }
 
-ElevationScroll.propTypes = { children: PropTypes.any, window: PropTypes.any };
+ElevationScroll.propTypes = {
+  children: PropTypes.any,
+  window: PropTypes.any,
+};

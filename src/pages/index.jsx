@@ -80,3 +80,5 @@ export default function Landing() {
     </Layout>
   );
 }
+
+export const Head = () => <title>Home</title>

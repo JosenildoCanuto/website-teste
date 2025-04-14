@@ -22,7 +22,7 @@ export default function HeroServices() {
         alignItems: "center",
         justifyContent: "center",
         pt: "15rem",
-        pb: { xs: "2rem", md: "6rem", lg: "6rem", xl: "22rem" },
+        pb: { xs: "12rem", xl: "22rem" },
       }}
     >
       <Grid
@@ -30,7 +30,7 @@ export default function HeroServices() {
         alignItems="center"
         justifyContent="space-between"
         spacing={2}
-        sx={{ pt: { md: 0, xs: 8 }, pb: { md: 0, xs: 5 } }}
+        sx={{ pt: { md: 0, xs: 8 }, pb: 5 }}
       >
         <Grid item xs={12} lg={5} md={6}>
           <Grid
@@ -48,11 +48,10 @@ export default function HeroServices() {
                 transition={{ type: "spring", stiffness: 150, damping: 30 }}
               >
                 <Typography
-                  variant="h1"
+                  variant="h4"
                   color="success"
                   sx={{
-                    fontSize: { xs: "1.825rem", sm: "2rem", md: "2.375rem" },
-                    fontWeight: 700,
+                    fontWeight: 'bold',
                     lineHeight: { xs: 1.3, sm: 1.3, md: 1.3 },
                   }}
                 >
