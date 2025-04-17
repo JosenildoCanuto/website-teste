@@ -30,6 +30,7 @@ import { ThemeMode } from "../../config";
 
 // assets
 import MenuOutlined from "@ant-design/icons/MenuOutlined";
+import CloseOutlined from "@ant-design/icons/CloseOutlined";
 import User from "../../images/drawers/user.svg";
 import Shopping from "../../images/drawers/shopping.svg";
 import Folder from "../../images/drawers/folder.svg";
@@ -189,10 +190,27 @@ export default function Header() {
                   "& .MuiListItemIcon-root": { color: "black" },
                 }}
               >
-                <Box sx={{ pt: 3, pl: 1 }}>
-                  <Link component={GatsbyLink} to="/" underline="none">
-                    <Logo />
-                  </Link>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    px: 4,
+                    pt: 3,
+                  }}
+                >
+                  <IconButton
+                    onClick={drawerToggler(false)}
+                    size="small"
+                    sx={{
+                      color: "text.primary",
+                      "&:hover": {
+                        color: "primary.main",
+                      },
+                    }}
+                  >
+                    <CloseOutlined />
+                  </IconButton>
                 </Box>
                 <Box
                   sx={{
@@ -239,7 +257,7 @@ export default function Header() {
                                 borderRadius: 2,
                                 bgcolor: isActive(to)
                                   ? "rgba(169, 169, 169, 0.2)"
-                                  : "transparent"
+                                  : "transparent",
                               }}
                             >
                               <ListItemIcon>
