@@ -19,9 +19,9 @@ export default function AboutUs() {
     <Container sx={{ pt: '6rem' }}>
       <Grid container alignItems="center" justifyContent="center" spacing={2}>
         <Grid item xs={12}>
-          <Grid container spacing={1} justifyContent="center" sx={{ mb: 4, textAlign: 'center' }}>
+          <Grid container spacing={1} justifyContent="center" sx={{ mb: 4, textAlign: 'left' }}>
             <Grid item sm={10} md={12}>
-              <Grid container spacing={1} justifyContent="center">
+              <Grid container spacing={1} justifyContent="left">
                 <Grid item xs={12}>
                   <Typography variant="h4" sx={{ mb: 2, fontWeight: 'bold' }}>
                     Sobre Nosotros

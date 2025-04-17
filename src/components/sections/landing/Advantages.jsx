@@ -31,8 +31,8 @@ export default function AdvantagesPage() {
             variant="h1"
             color="white"
             sx={{
-              fontSize: { xs: '2rem', sm: '2.5rem', md: '3.5rem' },
               lineHeight: { xs: 1, sm: 1, md: 1 },
+              fontSize: { xs: "1.825rem", sm: "2rem", md: "2.25rem" },
               fontWeight: 'bold',
               color: 'black',
               width: '100%',

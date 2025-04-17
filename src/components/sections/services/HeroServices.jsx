@@ -21,8 +21,11 @@ export default function HeroServices() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        pt: "15rem",
-        pb: { xs: "12rem", xl: "22rem" },
+        pt: {xs: "8rem" , md:"15rem"},
+        pb: { xs: "12rem" },
+        "@media (min-width: 1800px)": {
+          pb: "26rem",
+        },
       }}
     >
       <Grid
@@ -32,20 +35,21 @@ export default function HeroServices() {
         spacing={2}
         sx={{ pt: { md: 0, xs: 8 }, pb: 5 }}
       >
-        <Grid item xs={12} lg={5} md={6}>
+        <Grid item xs={10} lg={5} md={6}>
           <Grid
             container
             spacing={2}
             sx={{
+              pl: '1.5rem',
               pr: 0,
-              [theme.breakpoints.down("md")]: { textAlign: "center" },
+              [theme.breakpoints.down("md")]: { textAlign: "start" },
             }}
           >
-            <Grid item xs={12}>
+            <Grid item xs={12} sx={{ pl: 0 }}>
               <motion.div
                 initial={{ opacity: 0, translateY: 550 }}
                 animate={{ opacity: 1, translateY: 0 }}
-                transition={{ type: "spring", stiffness: 150, damping: 30 }}
+                transition={{ type: "spring", stiffness: 40, damping: 20 }}
               >
                 <Typography
                   variant="h4"
@@ -75,17 +79,15 @@ export default function HeroServices() {
                 animate={{ opacity: 1, translateY: 0 }}
                 transition={{
                   type: "spring",
-                  stiffness: 150,
-                  damping: 30,
+                  stiffness: 40,
+                  damping: 20,
                   delay: 0.2,
                 }}
               >
                 <Typography
-                  variant="h6"
+                  variant="body1"
                   color="text.secondary"
                   sx={{
-                    fontSize: { xs: "0.875rem", md: "1rem" },
-                    fontWeight: 400,
                     lineHeight: { xs: 1.4, md: 1.4 },
                   }}
                 >

@@ -85,7 +85,7 @@ export default function Services() {
             container
             spacing={1}
             justifyContent="center"
-            sx={{ pb: 4, textAlign: "center" }}
+            sx={{ pb: 4, textAlign: { xs: "start" , md: "center"} }}
           >
             <Grid item sm={10} md={6}>
               <Grid container spacing={1} justifyContent="center">

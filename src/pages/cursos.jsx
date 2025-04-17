@@ -12,7 +12,7 @@ import MainCard from "../components/MainCard";
 import Layout from "../components/layouts/index";
 import HeroCursos from "../components/sections/cursos/HeroCursos";
 import AnimateButton from "../components/@extended/AnimateButton";
-import Animation from "../components/sections/landing/Animation";
+import { motion } from "framer-motion";
 import { CardMedia } from "@mui/material";
 
 // assets
@@ -96,7 +96,7 @@ export default function Cursos() {
             position: "absolute",
             width: { md: "30%", lg: "30%", xl: "30%" },
             right: { md: "18%", lg: "16%", xl: "20%" },
-            top: { md: "26%", lg: "16%", xl: "12%" },
+            top: { md: "26%", lg: "16%", xl: "28%" },
             display: { xs: "none", md: "block" },
           }}
         />
@@ -120,10 +120,14 @@ export default function Cursos() {
             key={index}
             sx={{ my: { md: "2rem" }, px: "1rem" }}
           >
-            <Animation
-              variants={{
-                visible: { opacity: 1 },
-                hidden: { opacity: 0 },
+            <motion.div
+              initial={{ opacity: 0, translateY: 550 }}
+              animate={{ opacity: 1, translateY: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 40,
+                damping: 20,
+                delay: 0.2,
               }}
             >
               <MainCard
@@ -168,7 +172,7 @@ export default function Cursos() {
                   </Grid>
                 </Grid>
               </MainCard>
-            </Animation>
+            </motion.div>
           </Grid>
         ))}
       </Grid>

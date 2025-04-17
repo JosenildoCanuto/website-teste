@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 
 // project import
 import MainCard from "../../MainCard";
-import Animation from "./Animation";
+import { motion } from "framer-motion";
 
 // assets
 import imgfeature1 from "../../../images/landing/img-feature1.svg";
@@ -19,22 +19,22 @@ import imgfeature3 from "../../../images/landing/img-feature3.svg";
 export default function FeatureBlock() {
   return (
     <Container sx={{ pt: "6rem" }}>
-      <Grid container alignItems="center" justifyContent="center" spacing={2}>
+      <Grid container alignItems="center" justifyContent="left" spacing={3}>
         <Grid item xs={12}>
           <Grid
             container
             spacing={1}
-            justifyContent="center"
-            sx={{ textAlign: "center" }}
+            justifyContent="left"
+            sx={{ textAlign: "left" }}
           >
             <Grid item sm={10} md={6}>
-              <Grid container spacing={1} justifyContent="center">
+              <Grid container spacing={1} justifyContent="left">
                 <Grid item xs={12}>
                   <Typography variant="h4" sx={{ fontWeight: "bold" }}>
                     Servicios de Validación
                   </Typography>
                 </Grid>
-                <Grid item xs={12} md={9}>
+                <Grid item xs={12} md={12}>
                   <Typography variant="body2" color="text.secondary">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -45,13 +45,20 @@ export default function FeatureBlock() {
             </Grid>
           </Grid>
         </Grid>
-        <Container sx={{ pt: '3rem', display: 'flex', flexWrap: {xs: 'wrap', md: 'nowrap'}, gap: '2rem' }}>
+        <Container
+          sx={{
+            pt: "1rem",
+            pl: "1rem",
+            display: "flex",
+            flexWrap: { xs: "wrap", md: "nowrap" },
+            gap: "1rem",
+          }}
+        >
           <Grid item xs={12} sm={6} md={4}>
-            <Animation
-              variants={{
-                hidden: { opacity: 0, translateY: 550 },
-                visible: { opacity: 1, translateY: 0 },
-              }}
+            <motion.div
+              initial={{ opacity: 0, translateY: 550 }}
+              animate={{ opacity: 1, translateY: 0 }}
+              transition={{ type: "spring", stiffness: 40, damping: 20, delay: 0.2 }}
             >
               <MainCard
                 contentSX={{ p: 3 }}
@@ -74,14 +81,13 @@ export default function FeatureBlock() {
                   </Grid>
                 </Grid>
               </MainCard>
-            </Animation>
+            </motion.div>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Animation
-              variants={{
-                hidden: { opacity: 0, translateY: 550 },
-                visible: { opacity: 1, translateY: 0 },
-              }}
+            <motion.div
+              initial={{ opacity: 0, translateY: 550 }}
+              animate={{ opacity: 1, translateY: 0 }}
+              transition={{ type: "spring", stiffness: 40, damping: 20, delay: 0.4 }}
             >
               <MainCard
                 contentSX={{ p: 3 }}
@@ -104,14 +110,13 @@ export default function FeatureBlock() {
                   </Grid>
                 </Grid>
               </MainCard>
-            </Animation>
+            </motion.div>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Animation
-              variants={{
-                hidden: { opacity: 0, translateY: 550 },
-                visible: { opacity: 1, translateY: 0 },
-              }}
+            <motion.div
+              initial={{ opacity: 0, translateY: 550 }}
+              animate={{ opacity: 1, translateY: 0 }}
+              transition={{ type: "spring", stiffness: 40, damping: 20, delay: 0.6 }}
             >
               <MainCard
                 contentSX={{ p: 3 }}
@@ -134,7 +139,7 @@ export default function FeatureBlock() {
                   </Grid>
                 </Grid>
               </MainCard>
-            </Animation>
+            </motion.div>
           </Grid>
         </Container>
       </Grid>

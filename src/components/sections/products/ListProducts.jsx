@@ -16,6 +16,7 @@ import StandardPlusLogo from "../../../images/products/price/StandardPlus";
 import LogoPlus from "../../../images/products/price/LogoPlus";
 
 import CheckOutlined from "@ant-design/icons/CheckOutlined";
+import { Container } from "@mui/system";
 
 // plan list
 const plans = [
@@ -82,94 +83,100 @@ export default function ListProducts() {
 
   return (
     <>
-      <Box
-        sx={{
-          pl: { md: "9rem", xs: "1rem" },
-          pr: { md: "9rem", xs: "1rem" },
-          pb: "6rem",
-        }}
-      >
-        <Grid
-          item
-          spacing={3}
-          xs={12}
+      <Container>
+        <Box
           sx={{
-            display: "flex",
-            gap: 2,
-            flexDirection: "column",
-            alignItems: "center",
+            pb: "6rem",
           }}
         >
-          {plans.map((plan, index) => (
-            <Grid item xs={12} sm={9} key={index}>
-              <MainCard
-                sx={{ pt: 1.75, border: "1px solid", borderColor: "#e6ebf1" }}
-              >
-                <Grid container spacing={3} sx={{ display: "flex" }}>
-                  <Grid item xs={12} sm={4}>
-                    <Grid item xs={12} sx={{ paddingLeft: 2 }}>
-                      <Stack
-                        direction="row"
-                        spacing={2}
-                        textAlign="center"
-                        alignItems="center"
-                      >
-                        <Box height={36} sx={{ "& svg": { height: 1 } }}>
-                          {plan.icon}
-                        </Box>
-                        <Typography sx={{ fontSize: "20px" }}>
-                          {plan.title}
-                        </Typography>
-                      </Stack>
-                    </Grid>
-                    <Grid item xs={11} sx={{ mt: 3, paddingLeft: { md: 2 } }}>
-                      <Typography color="text.secondary" variant="body2">
-                        {plan.description}
-                      </Typography>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={8}>
-                    <List
-                      sx={{
-                        m: 0,
-                        p: 2,
-                        columnCount: { xs: 1, sm: 2, lg: 3 },
-                        columnGap: 4,
-                        height: "100%",
-                        "& > li": {
-                          px: 0,
-                          py: 0.625,
-                          "& svg": { fill: theme.palette.success.dark },
-                          display: "flex",
-                          minWidth: 0,
-                          flex: "1 1 auto", //
-                        },
-                      }}
-                      component="div"
-                    >
-                      {planList.map((list, i) => (
-                        <ListItem
-                          key={i}
-                          sx={
-                            !plan.permission.includes(i) ? priceListDisable : {}
-                          }
-                          divider
+          <Grid
+            item
+            spacing={3}
+            xs={12}
+            sx={{
+              display: "flex",
+              gap: 2,
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            {plans.map((plan, index) => (
+              <Grid item xs={12} sm={8} key={index}>
+                <MainCard
+                  sx={{ pt: 1.75, border: "1px solid", borderColor: "#e6ebf1" }}
+                >
+                  <Grid container spacing={3} sx={{ display: "flex" }}>
+                    <Grid item xs={12} sm={4}>
+                      <Grid item xs={12} sx={{ paddingLeft: 2 }}>
+                        <Stack
+                          direction="row"
+                          spacing={2}
+                          textAlign="center"
+                          alignItems="center"
                         >
-                          <ListItemIcon>
-                            <CheckOutlined />
-                          </ListItemIcon>
-                          <ListItemText primary={list} sx={{ '& .MuiTypography-root': { fontSize: '14px' } }} />
-                        </ListItem>
-                      ))}
-                    </List>
+                          <Box height={36} sx={{ "& svg": { height: 1 } }}>
+                            {plan.icon}
+                          </Box>
+                          <Typography sx={{ fontSize: "20px" }}>
+                            {plan.title}
+                          </Typography>
+                        </Stack>
+                      </Grid>
+                      <Grid item xs={11} sx={{ mt: 3, paddingLeft: { md: 2 } }}>
+                        <Typography color="text.secondary" variant="body2">
+                          {plan.description}
+                        </Typography>
+                      </Grid>
+                    </Grid>
+                    <Grid item xs={12} sm={8}>
+                      <List
+                        sx={{
+                          m: 0,
+                          p: 2,
+                          columnCount: { xs: 1, sm: 2, lg: 3 },
+                          columnGap: 4,
+                          height: "100%",
+                          "& > li": {
+                            px: 0,
+                            py: 0.625,
+                            "& svg": { fill: theme.palette.success.dark },
+                            display: "flex",
+                            minWidth: 0,
+                            flex: "1 1 auto", //
+                          },
+                        }}
+                        component="div"
+                      >
+                        {planList.map((list, i) => (
+                          <ListItem
+                            key={i}
+                            sx={
+                              !plan.permission.includes(i)
+                                ? priceListDisable
+                                : {}
+                            }
+                            divider
+                          >
+                            <ListItemIcon>
+                              <CheckOutlined />
+                            </ListItemIcon>
+                            <ListItemText
+                              primary={list}
+                              sx={{
+                                "& .MuiTypography-root": { fontSize: "14px" },
+                              }}
+                            />
+                          </ListItem>
+                        ))}
+                      </List>
+                    </Grid>
                   </Grid>
-                </Grid>
-              </MainCard>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-      ;
+                </MainCard>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+      </Container>
     </>
   );
 }

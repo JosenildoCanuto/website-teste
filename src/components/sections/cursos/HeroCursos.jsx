@@ -22,7 +22,10 @@ export default function HeroCursos() {
         alignItems: "center",
         justifyContent: "center",
         pt: "15rem",
-        pb: { xs: "2rem", md: "6rem", lg: "12rem", xl: "14rem" },
+        pb: { xs: "2rem", md: "6rem", lg: "8rem" },
+        "@media (min-width: 1800px)": {
+          pb: "20rem",
+        },
       }}
     >
       <Grid
@@ -30,15 +33,16 @@ export default function HeroCursos() {
         alignItems="center"
         justifyContent="space-between"
         spacing={2}
-        sx={{ pt: { md: 0, xs: 8 }, pb: { md: 0, xs: 5 } }}
+        sx={{ pt: { xs: 0 }, pb: { md: 0, xs: 6 } }}
       >
         <Grid item xs={12} lg={5} md={6}>
           <Grid
             container
             spacing={2}
             sx={{
+              pl: '1.5rem',
               pr: 0,
-              [theme.breakpoints.down("md")]: { textAlign: "center" },
+              [theme.breakpoints.down("md")]: { textAlign: "start" },
             }}
           >
             <Grid item xs={12}>

@@ -73,13 +73,13 @@ export default function PartnerBlock() {
   return (
     <Box sx={{ overflowX: 'hidden' }}>
       <Container>
-        <Grid container alignItems="center" justifyContent="center" spacing={2} sx={{ mt: { md: 10, xs: 2.5 }, mb: { md: 5, xs: 2.5 } }}>
+        <Grid container alignItems="start" justifyContent="start" spacing={2} sx={{ pt: { md: 10, xs: 2.5 }, pb: { md: 5, xs: 2.5 } }}>
           <Grid item xs={12}>
-            <Grid container spacing={1} justifyContent="center" sx={{ mb: 4, textAlign: 'center' }}>
-              <Grid item sm={10} md={6}>
-                <Grid container spacing={1} justifyContent="center">
+            <Grid container spacing={1} justifyContent="start" sx={{ pb: 4, textAlign: 'start' }}>
+              <Grid item sm={10} md={12}>
+                <Grid container spacing={1} justifyContent="start">
                   <Grid item xs={12}>
-                    <Typography variant="h4" colort="sucess">
+                    <Typography variant="h4" color="sucess">
                       What our Customer says
                     </Typography>
                   </Grid>
@@ -87,6 +87,7 @@ export default function PartnerBlock() {
                     <Typography variant="body2" color="text.secondary">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
                       aliqua.
+                      
                     </Typography>
                   </Grid>
                 </Grid>

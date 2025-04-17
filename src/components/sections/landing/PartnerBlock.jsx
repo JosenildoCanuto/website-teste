@@ -77,11 +77,11 @@ export default function PartnerBlock() {
   return (
     <Box sx={{ overflowX: 'hidden' }}>
       <Container sx={{ pt: '6rem' }}>
-        <Grid container alignItems="center" justifyContent="center" spacing={2}>
+        <Grid container alignItems="left" justifyContent="left" spacing={2}>
           <Grid item xs={12}>
-            <Grid container spacing={1} justifyContent="center" sx={{ mb: 4, textAlign: 'center' }}>
+            <Grid container spacing={1} justifyContent="left" sx={{ mb: 4, textAlign: 'left' }}>
               <Grid item sm={10} md={6}>
-                <Grid container spacing={1} justifyContent="center">
+                <Grid container spacing={1} justifyContent="left">
                   <Grid item xs={12}>
                     <Typography variant="h4" colort="sucess" sx={{ fontWeight: "bold" }}>
                       Nuestros Clientes
@@ -91,8 +91,8 @@ export default function PartnerBlock() {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={12} style={{ paddingLeft: 0 }}>
-            <Grid container spacing={2} justifyContent="center" sx={{ textAlign: 'center', flexWrap: { xs: 'wrap', lg: 'nowrap' } }}>
+          <Grid item xs={12} style={{ paddingLeft: '1rem' }}>
+            <Grid container spacing={2} justifyContent="start" sx={{ textAlign: 'left', flexWrap: { xs: 'wrap', lg: 'nowrap' } }}>
               {partnerimage.map((item, index) => (
                 <Grid item key={index}>
                   <Animation

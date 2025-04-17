@@ -20,9 +20,9 @@ export default function Products() {
     <Layout>
       <Box
         sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
           position: "relative",
           overflow: "hidden",
           "&>*": {
@@ -58,11 +58,20 @@ export default function Products() {
           container
           spacing={1}
           justifyContent="center"
-          sx={{ pb: 4, textAlign: "center" }}
+          sx={{ pb: 4, textAlign: "start" }}
         >
-          <Grid item sm={10} md={6}>
-            <Grid container spacing={1} justifyContent="center">
-              <Grid item xs={10}>
+          <Grid item sm={10} md={10}>
+            <Grid
+              container
+              justifyContent="start"
+              sx={{
+                pl: { xs:"2rem", md: "2rem", xl: "5rem" },
+                "@media (min-width: 1800px)": {
+                  pl: "30rem",
+                }
+              }}
+            >
+              <Grid item xs={10} md={10}>
                 <Typography variant="h4" sx={{ pb: 2, fontWeight: "bold" }}>
                   Módulos flexibles para hoy, escalables para el futuro.
                 </Typography>
@@ -86,4 +95,4 @@ export default function Products() {
   );
 }
 
-export const Head = () => <title>Products</title>
+export const Head = () => <title>Products</title>;

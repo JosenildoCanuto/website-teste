@@ -20,8 +20,8 @@ export default function NumberBlock() {
             animate={{ opacity: 1, translateY: 0 }}
             transition={{
               type: 'spring',
-              stiffness: 150,
-              damping: 30,
+              stiffness: 40,
+              damping: 20,
               delay: 0.2
             }}
           >
@@ -52,8 +52,8 @@ export default function NumberBlock() {
             animate={{ opacity: 1, translateY: 0 }}
             transition={{
               type: 'spring',
-              stiffness: 150,
-              damping: 30,
+              stiffness: 40,
+              damping: 20,
               delay: 0.4
             }}
           >
@@ -84,8 +84,8 @@ export default function NumberBlock() {
             animate={{ opacity: 1, translateY: 0 }}
             transition={{
               type: 'spring',
-              stiffness: 150,
-              damping: 30,
+              stiffness: 40,
+              damping: 20,
               delay: 0.6
             }}
           >

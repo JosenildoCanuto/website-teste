@@ -45,7 +45,7 @@ export default function HeaderPage() {
               <motion.div
                 initial={{ opacity: 0, translateY: 550 }}
                 animate={{ opacity: 1, translateY: 0 }}
-                transition={{ type: "spring", stiffness: 150, damping: 30 }}
+                transition={{ type: "spring", stiffness: 40, damping: 20 }}
               >
                 <Typography
                   variant="h1"
@@ -72,9 +72,9 @@ export default function HeaderPage() {
                 animate={{ opacity: 1, translateY: 0 }}
                 transition={{
                   type: "spring",
-                  stiffness: 150,
-                  damping: 30,
-                  delay: 0.2,
+                  stiffness: 40,
+                  damping: 20,
+                  delay: 0.2
                 }}
               >
                 <Typography
@@ -97,8 +97,8 @@ export default function HeaderPage() {
                 animate={{ opacity: 1, translateY: 0 }}
                 transition={{
                   type: "spring",
-                  stiffness: 150,
-                  damping: 30,
+                  stiffness: 40,
+                  damping: 20,
                   delay: 0.4,
                 }}
               >

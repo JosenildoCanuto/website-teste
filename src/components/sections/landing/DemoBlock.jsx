@@ -25,17 +25,17 @@ import AnimateButton from '../../@extended/AnimateButton';
 export default function DemoBlock() {
   return (
     <Container sx={{ pt: '6rem' }}>
-      <Grid container alignItems="center" justifyContent="center" spacing={2}>
+      <Grid container alignItems="center" justifyContent="left" spacing={2}>
         <Grid item xs={12}>
-          <Grid container spacing={1} justifyContent="center" sx={{ textAlign: 'center' }}>
+          <Grid container spacing={1} justifyContent="left" sx={{ textAlign: 'left' }}>
             <Grid item sm={10} md={6}>
-              <Grid container spacing={1} justifyContent="center">
+              <Grid container spacing={1} justifyContent="left">
                 <Grid item xs={12}>
-                  <Typography variant="h4" sx={{ mb: 2, fontWeight: 'bold' }}>
+                  <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
                     Cursos de Capacitación
                   </Typography>
                 </Grid>
-                <Grid item xs={12} md={9}>
+                <Grid item xs={12} md={12}>
                   <Typography variant="body2" color="text.secondary">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua.
