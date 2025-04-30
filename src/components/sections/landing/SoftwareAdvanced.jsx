@@ -1,12 +1,12 @@
 import React from "react";
 
+// Material-UI imports
 import { Box, Container, Grid, Typography, Button } from "@mui/material";
 
 export default function SoftwareAdvanced() {
   return (
     <Container
       disableGutters
-      spacing={2}
       sx={{
         display: "flex",
         flexDirection: { xs: "column", sm: "row", md: "column" },
@@ -14,10 +14,10 @@ export default function SoftwareAdvanced() {
         justifyContent: "center",
         backgroundColor: "#001B2E",
         width: "100%",
-        margin: 0,
         overflow: "hidden",
-        mt: { xs: 3, md: 6 },
-        mb: { xs: 6, md: 0 },
+        pt: { xs: 3, md: 6 },
+        pb: { xs: 6, md: 0 },
+        gap: 3,
       }}
     >
       <Grid
@@ -26,59 +26,68 @@ export default function SoftwareAdvanced() {
         sx={{
           display: "flex",
           justifyContent: "center",
-          marginLeft: 0,
           width: { sm: "50%", md: "100%" },
+          gap: 2,
         }}
       >
-        <Grid item style={{ paddingLeft: 0 }} xs={10} sm={8}>
+        <Grid item xs={10} sm={8} sx={{ pl: 0 }}>
           <Typography
             variant="h1"
             color="white"
             sx={{
               fontSize: { xs: "2rem", sm: "2.5rem", md: "3.5rem" },
               lineHeight: { xs: 1, sm: 1, md: 1 },
-              fontWeight: 'bold',
-              width: "100%",
+              fontWeight: "bold",
               maxWidth: "380px",
             }}
           >
             <Box component="span" sx={{ color: "primary.main" }}>
-              <span>Quality</span>
+              Quality
             </Box>{" "}
             Management System
           </Typography>
         </Grid>
-        <Grid item style={{ paddingLeft: 0 }} xs={10} sm={8}>
-          <Typography
-            variant="h6"
-            color="white"
-            sx={{
-              fontSize: { xs: "0.875rem", md: "1rem" },
-              fontWeight: 400,
-              lineHeight: { xs: 1.4, md: 1.4 },
-              maxWidth: "650px",
-            }}
-          >
-            Complete and connected meets fast and flexible. From quality event
-            management to document control and integrated training -
-            MasterControl Quality Excellence transforms your quality data and
-            processes into a competitive advantage.
-          </Typography>
+
+        <Grid item xs={10} sm={8} sx={{ pl: 0 }}>
           <Box
-            component="ul"
             sx={{
-              paddingLeft: 3,
-              listStyleType: "disc",
-              fontWeight: "bold",
-              color: "white",
+              minHeight: { xs: "auto", md: "13rem" },
+              display: "flex",
+              flexDirection: "column",
             }}
           >
-            <Typography component="li">Quality Events</Typography>
-            <Typography component="li">Document Control</Typography>
-            <Typography component="li">Training and Exams</Typography>
-            <Typography component="li">Audit Management</Typography>
-            <Typography component="li">Risk Management</Typography>
+            <Typography
+              variant="body1"
+              color="white"
+              sx={{
+                fontSize: { xs: "0.875rem", md: "1rem" },
+                lineHeight: 1.4,
+                maxWidth: "450px",
+              }}
+            >
+              Es un pilar fundamental de nuestra estrategia, donde los
+              documentos se transforman en una herramienta clave para la
+              digitalización.
+            </Typography>
+
+            <Typography
+              variant="body1"
+              color="white"
+              sx={{
+                fontSize: { xs: "0.875rem", md: "1rem" },
+                lineHeight: 1.4,
+                maxWidth: "450px",
+                pt: "0.5rem",
+              }}
+            >
+              Nuestra solución separa la información del documento formal,
+              permitiendo crear una base de conocimiento que automatiza la
+              generación documental, simplifica la aprobación y firma digital, y
+              optimiza la gestión de documentos. Esto allana el camino hacia el
+              ‘Papel Cero’.
+            </Typography>
           </Box>
+
           <Button
             color="primary"
             variant="contained"
@@ -87,38 +96,41 @@ export default function SoftwareAdvanced() {
               fontWeight: "600",
               fontSize: { xs: "1.2rem", md: "1.4rem" },
               lineHeight: "2rem",
-              p: "12px",
+              padding: "12px",
               borderRadius: 0,
-              my: 3,
+              paddingTop: 2,
+              paddingBottom: 2,
               textTransform: "none",
             }}
           >
-            Explore the QMS
+            Explorar funcionalidades
           </Button>
         </Grid>
       </Grid>
+
       <Grid
         container
         sx={{
           display: "flex",
           justifyContent: "center",
-          marginLeft: { xs: "-16px", sm: 0 },
           width: { sm: "50%", md: "100%" },
+          gap: 2,
         }}
       >
         <Grid
           item
-          style={{
-            px: 0,
+          xs={10}
+          sm={8}
+          sx={{
+            // paddingX: 0,
+            pl: "0.725rem",
             display: "flex",
             justifyContent: { sm: "flex-start" },
           }}
-          xs={10}
-          sm={8}
         >
           <img
             src="https://www.mastercontrol.com/images/default-source/mcui-design-system/image-library/custom/homepage/2023/qms-tab-image-1200.jpg"
-            alt=""
+            alt="QMS"
             width="835px"
             height="514px"
           />

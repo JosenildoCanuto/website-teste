@@ -117,7 +117,6 @@ export default function Header() {
               sx={{
                 "& .header-link": {
                   px: 1,
-                  "&:hover": { color: "primary.main" },
                 },
                 display: { xs: "none", md: "flex" },
               }}
@@ -146,7 +145,6 @@ export default function Header() {
                 display: { xs: "flex", md: "none" },
                 alignItems: "center",
                 justifyContent: "space-between",
-                px: 2,
                 boxSizing: "border-box",
               }}
             >
@@ -163,19 +161,15 @@ export default function Header() {
                 >
                   <Typography>Login</Typography>
                 </Button>
-                <IconButton
-                  color="secondary"
-                  onClick={drawerToggler(true)}
-                  sx={{
-                    "&:hover": {
-                      bgcolor:
-                        theme.palette.mode === ThemeMode.DARK
-                          ? "secondary.lighter"
-                          : "secondary.dark",
-                    },
-                  }}
-                >
-                  <MenuOutlined style={{ color: "#808286" }} />
+                <IconButton color="secondary" onClick={drawerToggler(true)}>
+                  <MenuOutlined
+                    style={{
+                      color: "#808286",
+                      "&:hover": {
+                        color: "primary.main",
+                      },
+                    }}
+                  />
                 </IconButton>
               </Stack>
               <Drawer
@@ -195,7 +189,7 @@ export default function Header() {
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
-                    px: 4,
+                    px: 3,
                     pt: 3,
                   }}
                 >
@@ -236,11 +230,11 @@ export default function Header() {
                           <Stack
                             direction="row"
                             alignItems="center"
-                            paddingLeft={1}
                             paddingRight={1}
                             spacing={1}
                           >
                             <Box
+                            paddingLeft={"0.5rem"}
                               sx={{
                                 width: 6,
                                 height: 40,
@@ -271,7 +265,7 @@ export default function Header() {
                               <ListItemText
                                 primary={label}
                                 primaryTypographyProps={{
-                                  variant: "h6",
+                                  variant: "body1",
                                   color: "text.primary",
                                 }}
                               />

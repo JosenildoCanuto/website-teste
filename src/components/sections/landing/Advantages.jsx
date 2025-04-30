@@ -1,67 +1,83 @@
 import React from "react";
 
-import { Box, Container, Grid, Typography } from '@mui/material';
+// material-ui
+import { Box, Container, Grid, Typography } from "@mui/material";
+
+// ==============================|| LANDING - ADVANTAGES PAGE ||============================== //
 
 export default function AdvantagesPage() {
   return (
     <Container
       disableGutters
-      spacing={2}
       sx={{
-        display: 'flex',
-        flexDirection: { xs: 'column', md: 'row' },
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '100%',
+        display: "flex",
+        flexDirection: { xs: "column", md: "row" },
+        alignItems: "center",
+        justifyContent: "center",
+        width: "100%",
         margin: 0,
-        overflow: 'hidden',
-        ml: 'auto',
-        mr: 'auto',
+        overflow: "hidden",
+        mx: "auto",
         mt: { xs: 12, md: 8 },
-        mb: { xs: 6, md: 8 }
+        mb: { xs: 6, md: 8 },
       }}
     >
       <Grid
         container
         spacing={2.5}
-        sx={{ display: 'flex', justifyContent: { xs: 'center', lg: 'flex-start' }, marginLeft: { xs: 2, md: 0 } }}
+        sx={{
+          display: "flex",
+          justifyContent: { xs: "center", lg: "flex-start" },
+          ml: { xs: 2, md: 0 },
+        }}
       >
-        <Grid item style={{ paddingLeft: 0 }} xs={10} sm={10}>
+        <Grid item xs={10} sm={10} sx={{ pl: 0 }}>
           <Typography
             variant="h1"
-            color="white"
             sx={{
-              lineHeight: { xs: 1, sm: 1, md: 1 },
+              lineHeight: 1,
               fontSize: { xs: "1.825rem", sm: "2rem", md: "2.25rem" },
-              fontWeight: 'bold',
-              color: 'black',
-              width: '100%',
-              maxWidth: { lg: '600px', xs: '100%' }
+              fontWeight: "bold",
+              color: "black",
+              width: "100%",
+              maxWidth: { lg: "600px", xs: "100%" },
             }}
           >
-            <span>Software That </span>
-            <Box component="span" sx={{ color: 'primary.main' }}>
-              <span>Eliminates Trade-Offs</span>
-            </Box>
+            Un software que reemplaza estructuras rígidas por una guía flexible
+            e inteligente (Wise)
           </Typography>
         </Grid>
-        <Grid item style={{ paddingLeft: 0 }} xs={10} sm={10}>
+
+        <Grid item xs={10} sm={10} sx={{ pl: 0 }}>
           <Typography
             variant="h6"
-            color="black"
-            sx={{ fontSize: { xs: '0.875rem', md: '1rem' }, lineHeight: { xs: 1.4, md: 1.4 }, mb: '20px' }}
+            sx={{
+              color: "text.secondary",
+              fontSize: { xs: "0.875rem", md: "1rem" },
+              lineHeight: 1.4,
+              mb: 2.5,
+            }}
           >
-            Bringing breakthrough products to market in highly regulated industries can feel like an endless series of trade-offs.
-            MasterControl is software simplifies GxP workflows so you never have to sacrifice quality for cost or innovation for regulation.
+            Tras años brindando soluciones a nuestros clientes, creamos una
+            herramienta que nos convirtió en la empresa pionera y más eficiente
+            en validación de software en Paraguay. Ahora usamos esa misma
+            solución para ayudar a nuestros clientes a alcanzar sus objetivos.
           </Typography>
         </Grid>
       </Grid>
-      <Grid container sx={{ display: 'flex', justifyContent: 'center', ml: 0, mt: '20px' }}>
-        <Grid item style={{ px: 0, display: 'flex', justifyContent: { sm: 'flex-start' } }} xs={10} sm={8}>
-          <img
+
+      <Grid container justifyContent="center" sx={{ ml: 0, mt: 3 }}>
+        <Grid
+          item
+          xs={10}
+          sm={8}
+          sx={{ px: 0, display: "flex", justifyContent: { sm: "flex-start" } }}
+        >
+          <Box
+            component="img"
             src="https://www.todoestudo.com.br/wp-content/uploads/2018/10/estatistica.png"
-            alt=""
-            style={{ maxWidth: '100%', height: 'auto' }}
+            alt="Statistics"
+            sx={{ maxWidth: "100%", height: "auto" }}
           />
         </Grid>
       </Grid>

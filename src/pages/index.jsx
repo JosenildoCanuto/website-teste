@@ -14,14 +14,13 @@ import AboutUs from "../components/sections/landing/AboutUs";
 
 import Layout from "../components/layouts/index";
 
-import headerImg from "../images/landing/header.png";
+import headerImg from "../images/landing/header-home.png";
 
 export default function Landing() {
   return (
     <Layout>
       <Box
         sx={{
-          // position: 'relative',
           overflow: "hidden",
           "&>*": {
             position: "relative",
@@ -38,36 +37,46 @@ export default function Landing() {
           },
         }}
       >
-        {/* <CardMedia
-            component="img"
-            image={headerImg}
-            sx={{
-              position: 'absolute',
-              width: { md: '60%', lg: '50%', xl: '50%' },
-              right: { md: '8%', lg: '6%', xl: '5%' },
-              top: { md: '16%', lg: '12%', xl: '8%' },
-              display: { xs: 'none', md: 'block' }
-            }}
-          /> */}
+        <CardMedia
+          component="img"
+          image={headerImg}
+          sx={{
+            position: "absolute",
+            width: { md: "60%", lg: "50%", xl: "50%" },
+            right: { md: "8%", lg: "6%", xl: "5%" },
+            top: { md: "16%", lg: "12%", xl: "8%" },
+            display: { xs: "none", md: "block" },
+          }}
+        />
         <Header />
       </Box>
       <NumberBlock />
       <Advantages />
-      <Box sx={{ display: { md: "flex" }, width: "100%" }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          width: "100%",
+        }}
+      >
         <Box
           sx={{
-            display: "flex",
-            width: { md: "50%" },
+            width: { xs: "100%", md: "50%" },
             backgroundColor: "primary.main",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
           <SoftwareBasic />
         </Box>
         <Box
           sx={{
-            display: "flex",
-            width: { md: "50%" },
+            width: { xs: "100%", md: "50%" },
             backgroundColor: "#001B2E",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
           <SoftwareAdvanced />
@@ -81,4 +90,4 @@ export default function Landing() {
   );
 }
 
-export const Head = () => <title>Home</title>
+export const Head = () => <title>Home</title>;

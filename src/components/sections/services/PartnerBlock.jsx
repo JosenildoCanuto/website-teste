@@ -1,36 +1,36 @@
 import React from "react";
 
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 // material-ui
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
-import Typography from '@mui/material/Typography';
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Link from "@mui/material/Link";
+import Typography from "@mui/material/Typography";
+
+import Animation from "../landing/Animation";
 
 // assets
-import paypal from '../../../images/landing/companies/payPal.svg';
-import ablePro from '../../../images/landing/companies/ablePro.svg';
-import vimeo from '../../../images/landing/companies/vimeo.svg';
-import codedThemes from '../../../images/landing/companies/codedThemes.svg';
-import dinersClub from '../../../images/landing/companies/dinersClub.svg';
-import applePay from '../../../images/landing/companies/applePay.svg';
-import americanExpress from '../../../images/landing/companies/americanExpress.svg';
-import discover from '../../../images/landing/companies/discover.svg';
-import Animation from '../landing/Animation';
+import farpasa from "../../../images/landing/companies/farpasa-logo.png";
+import eticos from "../../../images/landing/companies/logo-eticos.jpeg";
+import indexSaci from "../../../images/landing/companies/logo-index-saci.png";
+import lasca from "../../../images/landing/companies/logo-lasca.jpeg";
+import matherCompany from "../../../images/landing/companies/logo-mather-company.jpg";
+import promepar from "../../../images/landing/companies/logo-promepar.jpeg";
+import tecnomy from "../../../images/landing/companies/tecnomyl-logo.png";
 
 function Item({ item }) {
   return (
     <Typography
       variant="h2"
       sx={{
-        cursor: 'pointer',
+        cursor: "pointer",
         fontWeight: 600,
         my: 1,
         mx: 4.5,
-        transition: 'all 0.3s ease-in-out',
+        transition: "all 0.3s ease-in-out",
         opacity: item.highlight ? 0.75 : 0.4,
-        '&:hover': { opacity: '1' }
+        "&:hover": { opacity: "1" },
       }}
     >
       {item.text}
@@ -45,37 +45,45 @@ export default function PartnerBlock() {
 
   const partnerimage = [
     {
-      image: paypal
+      image: farpasa,
     },
     {
-      image: ablePro
+      image: eticos,
     },
     {
-      image: vimeo
+      image: indexSaci,
     },
     {
-      image: codedThemes
+      image: lasca,
     },
     {
-      image: dinersClub
+      image: matherCompany,
     },
     {
-      image: applePay
+      image: promepar,
     },
     {
-      image: americanExpress
+      image: tecnomy,
     },
-    {
-      image: discover
-    }
   ];
 
   return (
-    <Box sx={{ overflowX: 'hidden' }}>
+    <Box sx={{ overflowX: "hidden" }}>
       <Container>
-        <Grid container alignItems="start" justifyContent="start" spacing={2} sx={{ pt: { md: 10, xs: 2.5 }, pb: { md: 5, xs: 2.5 } }}>
+        <Grid
+          container
+          alignItems="start"
+          justifyContent="start"
+          spacing={2}
+          sx={{ pt: { md: 10, xs: 2.5 }, pb: { md: 5, xs: 2.5 } }}
+        >
           <Grid item xs={12}>
-            <Grid container spacing={1} justifyContent="start" sx={{ pb: 4, textAlign: 'start' }}>
+            <Grid
+              container
+              spacing={1}
+              justifyContent="start"
+              sx={{ pb: 4, textAlign: "start" }}
+            >
               <Grid item sm={10} md={12}>
                 <Grid container spacing={1} justifyContent="start">
                   <Grid item xs={12}>
@@ -85,9 +93,9 @@ export default function PartnerBlock() {
                   </Grid>
                   <Grid item xs={9}>
                     <Typography variant="body2" color="text.secondary">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
                       aliqua.
-                      
                     </Typography>
                   </Grid>
                 </Grid>
@@ -95,29 +103,35 @@ export default function PartnerBlock() {
             </Grid>
           </Grid>
           <Grid item xs={12} style={{ paddingLeft: 0 }}>
-            <Grid container spacing={2} justifyContent="center" sx={{ mb: 4, textAlign: 'center', flexWrap: { xs: 'wrap', lg: 'nowrap' } }}>
+            <Grid
+              container
+              spacing={2}
+              justifyContent="center"
+              sx={{
+                pb: 4,
+                textAlign: "center",
+                flexWrap: { xs: "wrap", lg: "nowrap" },
+              }}
+            >
               {partnerimage.map((item, index) => (
                 <Grid item key={index}>
                   <Animation
                     variants={{
                       visible: { opacity: 1 },
-                      hidden: { opacity: 0 }
+                      hidden: { opacity: 0 },
                     }}
                   >
-                    <Link href={item.link}>
-                      <Box
-                        component="img"
-                        src={item.image}
-                        alt="feature"
-                        sx={{
-                          transition: 'transform 0.3s ease, opacity 0.3s ease',
-                          '&:hover': {
-                            transform: 'scale(1.1)',
-                            opacity: 0.8
-                          }
-                        }}
-                      />
-                    </Link>
+                    <Box
+                      component="img"
+                      src={item.image}
+                      alt="feature"
+                      sx={{
+                        width: "2rem",
+                        height: "2rem",
+                        objectFit: "contain",
+                        transition: "transform 0.3s ease, opacity 0.3s ease",
+                      }}
+                    />
                   </Animation>
                 </Grid>
               ))}
