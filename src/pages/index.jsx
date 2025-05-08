@@ -14,7 +14,7 @@ import AboutUs from "../components/sections/landing/AboutUs";
 
 import Layout from "../components/layouts/index";
 
-import headerImg from "../images/landing/header-home.png";
+import headerImg from "../images/landing/header-new.png";
 import { Container } from "@mui/system";
 import Cards from "../components/sections/landing/Cardas";
 import { Typography } from "@mui/material";
