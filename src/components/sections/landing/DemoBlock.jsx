@@ -24,27 +24,38 @@ import AnimateButton from "../../@extended/AnimateButton";
 
 export default function DemoBlock() {
   return (
-    <Container sx={{ pt: "6rem" }}>
-      <Grid container alignItems="flex-start" justifyContent="left" spacing={2}>
+    <Container sx={{ pt: "2rem" }}>
+      <Grid
+        container
+        spacing={2}
+        sx={{ alignItems: "flex-start", justifyContent: "flex-start" }}
+      >
         <Grid item xs={12}>
           <Grid
             container
             spacing={1}
-            justifyContent="left"
-            sx={{ textAlign: "left" }}
+            sx={{ justifyContent: "flex-end", pb: "3rem" }}
           >
             <Grid item sm={10} md={6}>
-              <Grid container spacing={1} justifyContent="left">
-                <Grid item xs={12}>
-                  <Typography variant="h4" sx={{ fontWeight: "bold" }}>
-                    Cursos de Capacitación
-                  </Typography>
-                </Grid>
-                <Grid item xs={12} md={12}>
-                  <Typography variant="body1" color="text.secondary">
+              <Grid
+                container
+                spacing={1}
+                sx={{ display: "flex", justifyContent: "flex-end" }}
+              >
+                <Grid item xs={12} md={9}>
+                  <Typography
+                    variant="h4"
+                    sx={{ color: "#007cab", fontWeight: "550" }}
+                  >
                     Todos nuestros procesos de validación incluyen secciones de
-                    entrenamiento. Sin embargo, la rápida evolución de la
-                    industria exige una capacitación continua del equipo.
+                    entrenamiento.
+                  </Typography>
+                  <Typography
+                    variant="h4"
+                    sx={{ color: "#007cab", fontWeight: "550", pt: "0.5rem" }}
+                  >
+                    Sin embargo, la rápida evolución de la industria exige una
+                    capacitación continua del equipo.
                   </Typography>
                 </Grid>
               </Grid>
@@ -74,12 +85,12 @@ export default function DemoBlock() {
                 </Grid>
                 <Grid item xs={12} md={10}>
                   <Typography variant="body1" color="text.secondary">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    Una formación completa y flexible, diseñada para que tu
+                    equipo pueda organizar sus estudios sin comprometer su
+                    rutina diaria.
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                {/* <Grid item xs={12}>
                   <Box sx={{ display: "inline-block" }}>
                     <AnimateButton>
                       <Button
@@ -94,7 +105,7 @@ export default function DemoBlock() {
                       </Button>
                     </AnimateButton>
                   </Box>
-                </Grid>
+                </Grid> */}
               </Grid>
             </MainCard>
           </Animation>
@@ -138,7 +149,7 @@ export default function DemoBlock() {
                     procesos clave.
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                {/* <Grid item xs={12}>
                   <Box sx={{ display: "inline-block" }}>
                     <AnimateButton>
                       <Button
@@ -153,7 +164,7 @@ export default function DemoBlock() {
                       </Button>
                     </AnimateButton>
                   </Box>
-                </Grid>
+                </Grid> */}
               </Grid>
             </MainCard>
           </Animation>

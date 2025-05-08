@@ -51,7 +51,7 @@ export default function AboutUs() {
                         // color="secondary"
                         sx={{
                           my: 2,
-                          bgcolor: '#262626',
+                          bgcolor: '#007cab',
                           textTransform: "none",
                           '&:hover': {
                             bgcolor: '#8c8c8c'

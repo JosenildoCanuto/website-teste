@@ -1,56 +1,67 @@
 import React from "react";
 
-// Material-UI imports
+// material-ui
 import { Box, Container, Grid, Typography, Button } from "@mui/material";
 
-export default function SoftwareAdvanced() {
+// assets
+import gestionDocumentos from "../../../images/landing/gestionDocumentos.png";
+import Documentos from "../../../images/landing/documentos.png";
+
+export default function SoftwareBasic() {
   return (
     <Container
       disableGutters
       sx={{
+        pt: { xs: "6rem", md: "3rem" },
+        pl: { md: "6rem" },
         display: "flex",
         flexDirection: { xs: "column", sm: "row", md: "column" },
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "#001B2E",
+        justifyContent: "flex-start",
         width: "100%",
         overflow: "hidden",
-        pt: { xs: 3, md: 6 },
-        pb: { xs: 6, md: 0 },
-        gap: 3,
       }}
     >
       <Grid
         container
         spacing={2.5}
         sx={{
-          display: "flex",
-          justifyContent: "center",
+          alignContent: "center",
           width: { sm: "50%", md: "100%" },
-          gap: 2,
         }}
       >
-        <Grid item xs={10} sm={8} sx={{ pl: 0 }}>
+        <Grid
+          item
+          xs={10}
+          md={12}
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            alignItems: { xs: "flex-start", md: "center" },
+            gap: "1rem",
+          }}
+        >
+          <Box
+            component="img"
+            src={Documentos}
+            alt="logo documentos"
+            sx={{ width: "2.5rem" }}
+          />
           <Typography
-            variant="h1"
-            color="white"
+            variant="h4"
             sx={{
-              fontSize: { xs: "2rem", sm: "2.5rem", md: "3.5rem" },
-              lineHeight: { xs: 1, sm: 1, md: 1 },
+              fontSize: "2rem",
               fontWeight: "bold",
-              maxWidth: "380px",
+              color: "white",
             }}
           >
-            <Box component="span" sx={{ color: "primary.main" }}>
-              Quality
-            </Box>{" "}
-            Management System
+            Gestión de Documentos
           </Typography>
         </Grid>
 
-        <Grid item xs={10} sm={8} sx={{ pl: 0 }}>
+        <Grid item xs={10} md={11} sx={{ p: 0 }}>
           <Box
             sx={{
+              pb: { xs: "1rem", md: 0 },
               minHeight: { xs: "auto", md: "13rem" },
               display: "flex",
               flexDirection: "column",
@@ -58,11 +69,10 @@ export default function SoftwareAdvanced() {
           >
             <Typography
               variant="body1"
-              color="white"
               sx={{
+                color: "white",
                 fontSize: { xs: "0.875rem", md: "1rem" },
                 lineHeight: 1.4,
-                maxWidth: "450px",
               }}
             >
               Es un pilar fundamental de nuestra estrategia, donde los
@@ -72,11 +82,10 @@ export default function SoftwareAdvanced() {
 
             <Typography
               variant="body1"
-              color="white"
               sx={{
+                color: "white",
                 fontSize: { xs: "0.875rem", md: "1rem" },
                 lineHeight: 1.4,
-                maxWidth: "450px",
                 pt: "0.5rem",
               }}
             >
@@ -88,33 +97,29 @@ export default function SoftwareAdvanced() {
             </Typography>
           </Box>
 
-          <Button
+          {/* <Button
             color="primary"
             variant="contained"
-            size="small"
+            size="large"
             sx={{
-              fontWeight: "600",
-              fontSize: { xs: "1.2rem", md: "1.4rem" },
-              lineHeight: "2rem",
-              padding: "12px",
-              borderRadius: 0,
-              paddingTop: 2,
-              paddingBottom: 2,
+              px: 1,
+              backgroundColor: "#1E3F20",
               textTransform: "none",
+              "&:hover": {
+                backgroundColor: "#061901",
+              },
             }}
           >
             Explorar funcionalidades
-          </Button>
+          </Button> */}
         </Grid>
       </Grid>
 
       <Grid
         container
         sx={{
-          display: "flex",
-          justifyContent: "center",
           width: { sm: "50%", md: "100%" },
-          gap: 2,
+          pt: "2.9rem",
         }}
       >
         <Grid
@@ -122,15 +127,14 @@ export default function SoftwareAdvanced() {
           xs={10}
           sm={8}
           sx={{
-            // paddingX: 0,
-            pl: "0.725rem",
             display: "flex",
             justifyContent: { sm: "flex-start" },
           }}
         >
-          <img
-            src="https://www.mastercontrol.com/images/default-source/mcui-design-system/image-library/custom/homepage/2023/qms-tab-image-1200.jpg"
-            alt="QMS"
+          <Box
+            component="img"
+            src={gestionDocumentos}
+            alt="Quality Management System"
             width="835px"
             height="514px"
           />

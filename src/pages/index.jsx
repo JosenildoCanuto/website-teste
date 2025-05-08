@@ -15,6 +15,9 @@ import AboutUs from "../components/sections/landing/AboutUs";
 import Layout from "../components/layouts/index";
 
 import headerImg from "../images/landing/header-home.png";
+import { Container } from "@mui/system";
+import Cards from "../components/sections/landing/Cardas";
+import { Typography } from "@mui/material";
 
 export default function Landing() {
   return (
@@ -44,46 +47,85 @@ export default function Landing() {
             position: "absolute",
             width: { md: "60%", lg: "50%", xl: "50%" },
             right: { md: "8%", lg: "6%", xl: "5%" },
-            top: { md: "16%", lg: "12%", xl: "8%" },
+            top: { md: "16%", lg: "12%", xl: "18%" },
             display: { xs: "none", md: "block" },
           }}
         />
         <Header />
       </Box>
-      <NumberBlock />
+      <Box
+        sx={{
+          width: "100%",
+          py: "2rem",
+          backgroundColor: "#e5e5e5",
+        }}
+      >
+        <NumberBlock />
+      </Box>
       <Advantages />
       <Box
         sx={{
-          display: "flex",
-          flexDirection: { xs: "column", md: "row" },
           width: "100%",
+          py: { xs: "2rem", md: 0 },
+          background: {
+            xs: "linear-gradient(to bottom, #45899b 50%, #e67e61 50%)",
+            md: "linear-gradient(to right, #45899b 50%, #e67e61 50%)",
+          },
         }}
       >
-        <Box
+        <Container
           sx={{
-            width: { xs: "100%", md: "50%" },
-            backgroundColor: "primary.main",
             display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
+            flexDirection: { xs: "column", md: "row" },
           }}
         >
-          <SoftwareBasic />
-        </Box>
-        <Box
-          sx={{
-            width: { xs: "100%", md: "50%" },
-            backgroundColor: "#001B2E",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <SoftwareAdvanced />
-        </Box>
+          <Box
+            sx={{
+              width: { xs: "100%", md: "50%" },
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <SoftwareBasic />
+          </Box>
+          <Box
+            sx={{
+              width: { xs: "100%", md: "50%" },
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <SoftwareAdvanced />
+          </Box>
+        </Container>
       </Box>
       <FeatureBlock />
-      <DemoBlock />
+      <Box
+        sx={{
+          width: "100%",
+          py: "2rem",
+          background: {
+            xs: "linear-gradient(to bottom, #67c8cb 0%, #67c8cb 33.33%, #88cecf 33.33%, #88cecf 66.66%, #c3e5e5 66.66%, #c3e5e5 100%)",
+            md: "linear-gradient(to right, #67c8cb 0%, #67c8cb 33.33%, #88cecf 33.33%, #88cecf 66.66%, #c3e5e5 66.66%, #c3e5e5 100%)",
+          },
+        }}
+      >
+        <Cards />
+      </Box>
+      <Container sx={{ pt: "6rem", pb: '4rem' }}>
+        <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+          Cursos de Capacitación
+        </Typography>
+      </Container>
+      <Box
+        sx={{
+          width: "100%",
+          py: "2rem",
+          backgroundColor: "#97d5e9",
+        }}
+      >
+        <DemoBlock />
+      </Box>
       <PartnerBlock />
       <AboutUs />
     </Layout>

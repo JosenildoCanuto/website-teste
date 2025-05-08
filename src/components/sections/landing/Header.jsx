@@ -21,7 +21,7 @@ export default function HeaderPage() {
   const theme = useTheme();
 
   return (
-    <Container sx={{ py: "10rem", display: "flex", alignItems: "center" }}>
+    <Container sx={{ pt: "10rem", pb: "2rem", display: "flex", alignItems: "center" }}>
       <Grid
         container
         alignItems="center"
@@ -52,7 +52,7 @@ export default function HeaderPage() {
                   color="success"
                   sx={{
                     fontSize: { xs: "1.825rem", sm: "2rem", md: "2.25rem" },
-                    fontWeight: 700,
+                    fontWeight: 'bold',
                     lineHeight: 1.3,
                   }}
                 >
@@ -76,7 +76,7 @@ export default function HeaderPage() {
                 }}
               >
                 <Typography
-                  variant="h6"
+                  variant="body1"
                   color="text.secondary"
                   sx={{
                     fontSize: { xs: "0.875rem", md: "0.95rem" },
@@ -89,7 +89,7 @@ export default function HeaderPage() {
                   internacionalización.
                 </Typography>
                 <Typography
-                  variant="h6"
+                  variant="body1"
                   color="text.secondary"
                   sx={{
                     fontSize: { xs: "0.875rem", md: "0.95rem" },
@@ -121,23 +121,40 @@ export default function HeaderPage() {
                   sx={{ justifyContent: { xs: "center", md: "flex-start" } }}
                 >
                   <Grid item sx={{ pt: 0 }}>
-                    <AnimateButton>
-                      <Button
-                        component={GatsbyLink}
-                        to="/login"
-                        color="primary"
-                        size="large"
-                        variant="contained"
-                        sx={{ textTransform: "none" }}
+                    <Typography variant="h5" sx={{ fontWeight: "bold" }}>
+                      Nuestra solución{" "}
+                      <Box
+                        component="span"
+                        sx={{ color: "primary.main", fontWeight: "bold" }}
                       >
-                        Conozca Nuestra Metodología
-                      </Button>
-                    </AnimateButton>
+                        elimina
+                      </Box>{" "}
+                      esta pregunta.
+                    </Typography>
                   </Grid>
+                  <Box
+                    sx={{
+                      borderLeft: "4px solid #1976d2", // cor da borda
+                      pl: 2,
+                      ml: 2,
+                      my: 4,
+                    }}
+                  >
+                    <Typography
+                      variant="body1"
+                      sx={{
+                        fontStyle: "italic",
+                        fontSize: { xs: "1rem", md: "1.2rem" },
+                        color: "text.secondary",
+                      }}
+                    >
+                      “No importa dónde comencemos, lo crucial es que los
+                      caminos se unan al final.”
+                    </Typography>
+                  </Box>
                 </Grid>
               </motion.div>
             </Grid>
-
           </Grid>
         </Grid>
       </Grid>

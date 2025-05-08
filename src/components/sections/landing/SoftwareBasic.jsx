@@ -3,55 +3,63 @@ import React from "react";
 // material-ui
 import { Box, Container, Grid, Typography, Button } from "@mui/material";
 
+import gestionRiesgo from "../../../images/landing/gestionRiesgo.png";
+import Riesgo from "../../../images/landing/riesgo.png";
+
 export default function SoftwareBasic() {
   return (
     <Container
       disableGutters
       sx={{
+        pt: { md: "3rem" },
         display: "flex",
         flexDirection: { xs: "column", sm: "row", md: "column" },
-        alignItems: "center",
-        justifyContent: { xs: "flex-start", md: "center" },
-        backgroundColor: "primary.main",
         width: "100%",
-        pt: { xs: 3, md: 6 },
-        pb: { xs: 6, md: 0 },
-        pl: { md: "3.5rem" },
         overflow: "hidden",
-        gap: 3,
       }}
     >
       <Grid
         container
         spacing={2.5}
         sx={{
-          justifyContent: "center",
+          alignContent: "center",
           width: { sm: "50%", md: "100%" },
-          gap: 2,
         }}
       >
-        <Grid item xs={10} sm={8} sx={{ paddingLeft: 0 }}>
+        <Grid
+          item
+          xs={10}
+          md={12}
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            alignItems: { xs: "flex-start", md: "center" },
+            gap: "1rem",
+          }}
+        >
+          <Box
+            component="img"
+            src={Riesgo}
+            alt="logo riesgo"
+            sx={{ width: "3rem" }}
+          />
           <Typography
-            variant="h1"
+            variant="h4"
             sx={{
-              fontSize: { xs: "2rem", sm: "2.5rem", md: "3.5rem" },
-              lineHeight: 1,
+              fontSize: "2rem",
               fontWeight: "bold",
               color: "white",
-              maxWidth: "400px",
             }}
           >
-            <Box component="span" sx={{ color: "#001B2E" }}>
-              Quality
-            </Box>{" "}
-            Management System
+            Gestión de Riesgo
           </Typography>
         </Grid>
 
-        <Grid item xs={10} sm={8} sx={{ pl: 0 }}>
+        <Grid item xs={10} md={9}>
           <Box
             sx={{
-              minHeight: { xs: "auto", md: "13rem" }, // melhor escalonamento
+              pb: { xs: "1rem", md: 0 },
+              minHeight: { xs: "auto", md: "13rem" },
               display: "flex",
               flexDirection: "column",
             }}
@@ -62,7 +70,6 @@ export default function SoftwareBasic() {
                 color: "white",
                 fontSize: { xs: "0.875rem", md: "1rem" },
                 lineHeight: 1.4,
-                maxWidth: "450px",
               }}
             >
               Imagina seleccionar el objeto de tu análisis y que el sistema te
@@ -75,7 +82,6 @@ export default function SoftwareBasic() {
                 color: "white",
                 fontSize: { xs: "0.875rem", md: "1rem" },
                 lineHeight: 1.4,
-                maxWidth: "450px",
                 pt: "0.5rem",
               }}
             >
@@ -88,8 +94,6 @@ export default function SoftwareBasic() {
               sx={{
                 color: "white",
                 fontSize: { xs: "0.875rem", md: "1rem" },
-                lineHeight: 1.4,
-                maxWidth: "450px",
                 pt: "0.5rem",
               }}
             >
@@ -99,34 +103,26 @@ export default function SoftwareBasic() {
             </Typography>
           </Box>
 
-          <Button
+          {/* <Button
             color="primary"
             variant="contained"
-            size="small"
+            size="large"
             sx={{
-              fontWeight: 600,
-              fontSize: { xs: "1.2rem", md: "1.4rem" },
-              lineHeight: "2rem",
-              padding: "12px",
-              borderRadius: 0,
-              paddingTop: 2,
-              paddingBottom: 2,
-              backgroundColor: "#001B2E",
+              px: 1,
+              backgroundColor: "#7C110D",
               textTransform: "none",
             }}
           >
-            Explore the QMS
-          </Button>
+            Explorar funcionalidades
+          </Button> */}
         </Grid>
       </Grid>
 
       <Grid
         container
         sx={{
-          justifyContent: "center",
-          pl: { xs: "-16px", sm: 0 },
           width: { sm: "50%", md: "100%" },
-          pt: { xs: 4, md: 0 },
+          pt: "2rem",
         }}
       >
         <Grid
@@ -134,14 +130,13 @@ export default function SoftwareBasic() {
           xs={10}
           sm={8}
           sx={{
-            paddingX: 0,
             display: "flex",
-            justifyContent: { sm: "flex-start", md: "flex-end" },
+            justifyContent: { sm: "flex-start" },
           }}
         >
           <Box
             component="img"
-            src="https://www.mastercontrol.com/images/default-source/mcui-design-system/image-library/custom/homepage/2023/qms-tab-image-1200.jpg"
+            src={gestionRiesgo}
             alt="Quality Management System"
             width="835px"
             height="514px"

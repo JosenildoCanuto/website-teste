@@ -12,11 +12,11 @@ import Animation from "../landing/Animation";
 
 // assets
 import farpasa from "../../../images/landing/companies/farpasa-logo.png";
-import eticos from "../../../images/landing/companies/logo-eticos.jpeg";
+import eticos from "../../../images/landing/companies/logo-eticos.png";
+import lasca from "../../../images/landing/companies/logo-lasca.png";
 import indexSaci from "../../../images/landing/companies/logo-index-saci.png";
-import lasca from "../../../images/landing/companies/logo-lasca.jpeg";
-import matherCompany from "../../../images/landing/companies/logo-mather-company.jpg";
-import promepar from "../../../images/landing/companies/logo-promepar.jpeg";
+import matherCompany from "../../../images/landing/companies/logo-mather-company.png";
+import promepar from "../../../images/landing/companies/logo-promepar.png";
 import tecnomy from "../../../images/landing/companies/tecnomyl-logo.png";
 
 function Item({ item }) {
@@ -41,30 +41,15 @@ function Item({ item }) {
 // ==============================|| LANDING - PARTNER PAGE ||============================== //
 
 export default function PartnerBlock() {
-  // const theme = useTheme();
-
+  
   const partnerimage = [
-    {
-      image: farpasa,
-    },
-    {
-      image: eticos,
-    },
-    {
-      image: indexSaci,
-    },
-    {
-      image: lasca,
-    },
-    {
-      image: matherCompany,
-    },
-    {
-      image: promepar,
-    },
-    {
-      image: tecnomy,
-    },
+    { image: farpasa },
+    { image: eticos },
+    { image: lasca },
+    { image: indexSaci },
+    { image: matherCompany },
+    { image: promepar },
+    { image: tecnomy },
   ];
 
   return (
